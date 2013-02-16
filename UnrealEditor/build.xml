@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="UnrealEditor" default="default" basedir=".">
+	<description>Builds, tests, and runs the project UnrealEditor.</description>
+	<import file="nbproject/build-impl.xml"/>
+
+	<property name="version" value="1.0"/>
+	<property name="buildnumber" value="38"/>
+	<property name="copyright" value="Copyright 2012 WillyG Productions"/>
+
+	<target name="-post-jar">
+		<taskdef name="jarbundler" classname="net.sourceforge.jarbundler.JarBundler">
+			<classpath>
+				<pathelement location="/usr/share/ant/lib/jarbundler-2.2.0.jar"/>
+			</classpath>
+		</taskdef>
+
+		<jar destfile="OnyxIDE.jar">
+			<manifest>
+				<attribute name="Main-Class" value="unrealeditor.UnrealEditor"/>
+			</manifest>
+			<zipfileset src="dist/UnrealEditor.jar"/>
+			<zipfileset src="dist/lib/AppleJavaExtensions.jar"/>
+			<zipfileset src="dist/lib/autocomplete.jar"/>
+			<zipfileset src="dist/lib/JTattoo.jar"/>
+			<zipfileset src="dist/lib/rsyntaxtextarea.jar"/>
+			<zipfileset src="dist/lib/junique-1.0.4.jar"/>
+			<zipfileset src="dist/lib/glazedlists-1.7.0_java15.jar"/>
+		</jar>
+		
+		<jarbundler dir="${basedir}" verbose="true" showPlist="false"
+			name="Onyx IDE"
+			shortname="Onyx"
+			signature="????"
+			mainclass="unrealeditor.UnrealEditor"
+			jar="OnyxIDE.jar"
+			icon="Icons/WolfIcon.icns"
+			jvmversion="1.4+"
+			version="${version}"
+			infostring="${copyright}"
+			build="${buildnumber}"
+			bundleid="unrealeditor.UnrealEditor">
+			<javaproperty name="apple.laf.useScreenMenuBar" value="false"/>
+			<javaproperty name="apple.awt.brushMetal" value="false"/>
+			<javaproperty name="apple.awt.showGrowBox" value="false"/>
+			<documenttype name="UnrealScript Document"
+				extensions="uc"
+				iconFile="Icons/WolfIcon.icns"
+				role="Editor"/>
+		</jarbundler>
+	</target>
+
+	<target name="macapp" depends="-post-jar" description="Builds Mac Application">
+		
+	</target>
+</project>

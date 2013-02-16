@@ -1,0 +1,49 @@
+ONYX CHANGELOG
+--------------
+
+[ Feb 17 2012 ]
+ - Overhauled GUIProperties system to make it easier to manage themes. Now to add a theme, all you have to do is add to the defaults[][] array.
+
+[ Feb 18 2012 ]
+ - Added UScriptTokenMaker.java and modified UnrealTab.java.
+ - Added UnrealScript syntax highlighting with over 300 keywords.
+ - Removed dependency on JAlbum. This was done by adding the following classes: IO, JStackLabel, RiverLayout, StringCodec, and ToggleAction.
+ - Cleaned out references to JAlbum and unused references.
+
+[ Feb 19 2012 ]
+ - Added autoCompletion.setParameterAssistanceEnabled(true); which enables function parameter help.
+ - Made PC/UNIX line termination style a per-tab option, rather than a global option. Each tab instance now keeps its own selection.
+ - Fixed bug where opening a new file would not update the Termination Style radio buttons.
+
+[ Feb 26 2012 ]
+ - Moved Work In Progress message screen to showWIP() function.
+
+[ Feb 29 2012 ]
+ - Added icons to menus.
+ - Added main toolbar. Currently the toolbar has no functionality.
+
+[ Mar 03 2012 ]
+ - Added CmdClient.java to handle calls to Unreal Frontend and UDKGame.
+ - Added Compiler text area, which uses a background thread to handle grabbing directly from System.out.
+ - Redesigned app to use multithreading (which allows the compiler to work).
+ - Gave UDK --> Compile... basic functionality.
+
+[ Mar 04 2012 ]
+ - Refined CmdClient.java to handle multiple arguments.
+ - Gave entire UDK menu functionality (including checks for directory and file-safe actions).
+ - Added isDevBuild variable in UnrealEditor.java. Now, to enable certain OS-specific things across all platforms, just set this to true.
+ - Added Frontend icon.
+
+[ Mar 07 2012 ]
+ - Added feature that changes tab text color to red and appends * if tab content is changed.
+ - Changed tabOptions saving to integer instead by converting boolean array to bit string and then to int. Added two utility conversion functions to handle this.
+ - Refactored IO to Utils. Moved several general functions to this utility class.
+ - Added "Open Recent" submenu in the File menu.
+
+[ Mar 08 2012 ]
+ - Deleted ImageHelper.java and moved its functionality to Utils.java.
+ - Added rudimentary About menu.
+
+[ Mar 18 2012 ]
+ - Continued About menu work, began Help Contents menu work.
+ - Made Onyx License.

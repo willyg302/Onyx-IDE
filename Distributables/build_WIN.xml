@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="UnrealEditor" default="default" basedir=".">
+	<description>Builds, tests, and runs the project UnrealEditor.</description>
+	<import file="nbproject/build-impl.xml"/>
+	<target name="-post-jar">
+		<jar destfile="OnyxIDE.jar">
+			<manifest>
+				<attribute name="Main-Class" value="unrealeditor.UnrealEditor"/>
+			</manifest>
+			<zipfileset src="dist/UnrealEditor.jar"/>
+			<zipfileset src="dist/lib/AppleJavaExtensions.jar"/>
+			<zipfileset src="dist/lib/autocomplete.jar"/>
+			<zipfileset src="dist/lib/JTattoo.jar"/>
+			<zipfileset src="dist/lib/rsyntaxtextarea.jar"/>
+			<zipfileset src="dist/lib/junique-1.0.4.jar"/>
+		</jar>
+	</target>
+</project>

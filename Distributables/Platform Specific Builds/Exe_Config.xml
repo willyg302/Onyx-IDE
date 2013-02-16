@@ -1,0 +1,22 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\William\Documents\ONYX\Onyx IDE Cross Dist\OnyxIDE.jar</jar>
+  <outfile>C:\Users\William\Documents\ONYX\Windows EXE\OnyxIDE.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon>C:\Users\William\Documents\ONYX\Windows EXE\Icon2x.ico</icon>
+  <jre>
+    <path></path>
+    <minVersion>1.4.2</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+</launch4jConfig>
